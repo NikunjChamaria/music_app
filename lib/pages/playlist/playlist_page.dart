@@ -172,6 +172,8 @@ class _PlaylistPageState extends State<PlaylistPage>
                                           ),
                                           ListView.builder(
                                               shrinkWrap: true,
+                                              physics:
+                                                  const NeverScrollableScrollPhysics(),
                                               itemCount: snapshot
                                                   .data!["songs"].length,
                                               itemBuilder: (context, index) {

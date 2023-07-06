@@ -151,6 +151,7 @@ class _ArtistPageState extends State<ArtistPage>
                             ),
                             ListView.builder(
                                 shrinkWrap: true,
+                                physics: const NeverScrollableScrollPhysics(),
                                 itemCount: widget.artist["songs"].length,
                                 itemBuilder: (context, index) {
                                   return FutureBuilder(
