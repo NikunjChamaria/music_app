@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:music_app/backend/global_variables.dart';
+import '/backend/exports.dart';
 import 'package:music_app/constants/colors.dart';
 import 'package:music_app/pages/auth/log_in.dart';
 import 'package:music_app/pages/home/home.dart';

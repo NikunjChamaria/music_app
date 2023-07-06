@@ -4,7 +4,7 @@ import 'dart:typed_data';
 import 'package:cached_memory_image/cached_memory_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:music_app/backend/global_variables.dart';
+import '/backend/exports.dart';
 import 'package:music_app/constants/colors.dart';
 import 'package:music_app/pages/music/music.dart';
 import 'package:music_app/widgets/textstyle.dart';

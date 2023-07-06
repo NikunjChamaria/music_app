@@ -10,7 +10,7 @@ import 'package:music_app/widgets/textstyle.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../constants/colors.dart';
-import '../../backend/global_variables.dart';
+import '/backend/exports.dart';
 
 class MusicPage extends StatefulWidget {
   const MusicPage({super.key});

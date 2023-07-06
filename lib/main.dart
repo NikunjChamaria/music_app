@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:music_app/pages/splash_sceen/splash.dart';
 
-import 'backend/global_variables.dart';
+import 'backend/exports.dart';
 
 void main() {
   Get.lazyPut(() => Contoller());
