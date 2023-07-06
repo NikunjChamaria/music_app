@@ -44,6 +44,7 @@ dependencies:
   shared_preferences: ^2.2.0
   jwt_decoder: ^2.0.1
   image: ^4.0.17
+  flutter_isolate: ^2.0.4
   
   
   

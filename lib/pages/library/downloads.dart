@@ -74,86 +74,91 @@ class _DownloadsState extends State<Downloads> {
                               shrinkWrap: true,
                               itemCount: snapshot.data!.length,
                               itemBuilder: (context, index) {
-                                return GestureDetector(
-                                  onTap: () {
-                                    contoller.play(snapshot.data![index]["_id"],
-                                        false, -1);
+                                return Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: GestureDetector(
+                                    onTap: () {
+                                      contoller.play(
+                                          snapshot.data![index]["_id"],
+                                          false,
+                                          -1);
 
-                                    contoller.isMusicPlaying = true;
-                                  },
-                                  child: Container(
-                                    color: Colors.transparent,
-                                    width: double.maxFinite,
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Row(
-                                          children: [
-                                            Container(
-                                              height: 60,
-                                              width: 60,
-                                              decoration: const BoxDecoration(
+                                      contoller.isMusicPlaying = true;
+                                    },
+                                    child: Container(
+                                      color: Colors.transparent,
+                                      width: double.maxFinite,
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Row(
+                                            children: [
+                                              Container(
+                                                height: 60,
+                                                width: 60,
+                                                decoration: const BoxDecoration(
+                                                    borderRadius:
+                                                        BorderRadius.all(
+                                                            Radius.circular(
+                                                                5))),
+                                                child: ClipRRect(
                                                   borderRadius:
-                                                      BorderRadius.all(
-                                                          Radius.circular(5))),
-                                              child: ClipRRect(
-                                                borderRadius:
-                                                    const BorderRadius.all(
-                                                        Radius.circular(5)),
-                                                child: CachedMemoryImage(
-                                                  uniqueKey: snapshot
-                                                      .data![index]['name'],
-                                                  bytes: Uint8List.fromList(
-                                                      snapshot
-                                                          .data![index]
-                                                              ["coverImage"]
-                                                              ["data"]["data"]
-                                                          .cast<int>()),
+                                                      const BorderRadius.all(
+                                                          Radius.circular(5)),
+                                                  child: CachedMemoryImage(
+                                                    uniqueKey: snapshot
+                                                        .data![index]['name'],
+                                                    bytes: Uint8List.fromList(
+                                                        snapshot.data![index]
+                                                                ["coverImage"]
+                                                                ["data"]["data"]
+                                                            .cast<int>()),
+                                                  ),
                                                 ),
                                               ),
-                                            ),
-                                            Padding(
-                                              padding: const EdgeInsets.only(
-                                                  left: 10),
-                                              child: Column(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  Text(
-                                                    snapshot.data![index]
-                                                        ["name"],
-                                                    style: roboto(white, 18,
-                                                        FontWeight.w600),
-                                                  ),
-                                                  Text(
-                                                    snapshot.data![index]
-                                                        ["artist"],
-                                                    style: roboto(white, 14,
-                                                        FontWeight.w300),
-                                                  ),
-                                                ],
+                                              Padding(
+                                                padding: const EdgeInsets.only(
+                                                    left: 10),
+                                                child: Column(
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children: [
+                                                    Text(
+                                                      snapshot.data![index]
+                                                          ["name"],
+                                                      style: roboto(white, 18,
+                                                          FontWeight.w600),
+                                                    ),
+                                                    Text(
+                                                      snapshot.data![index]
+                                                          ["artist"],
+                                                      style: roboto(white, 14,
+                                                          FontWeight.w300),
+                                                    ),
+                                                  ],
+                                                ),
                                               ),
-                                            ),
-                                          ],
-                                        ),
-                                        GestureDetector(
-                                          onTap: () async {
-                                            SharedPreferences
-                                                sharedPreferences =
-                                                await SharedPreferences
-                                                    .getInstance();
-                                            sharedPreferences.remove(
-                                                snapshot.data![index]["_id"]);
-                                            setState(() {});
-                                          },
-                                          child: const Icon(
-                                            Icons.delete,
-                                            color: white,
+                                            ],
                                           ),
-                                        )
-                                      ],
+                                          GestureDetector(
+                                            onTap: () async {
+                                              SharedPreferences
+                                                  sharedPreferences =
+                                                  await SharedPreferences
+                                                      .getInstance();
+                                              sharedPreferences.remove(
+                                                  snapshot.data![index]["_id"]);
+                                              setState(() {});
+                                            },
+                                            child: const Icon(
+                                              Icons.delete,
+                                              color: white,
+                                            ),
+                                          )
+                                        ],
+                                      ),
                                     ),
                                   ),
                                 );
