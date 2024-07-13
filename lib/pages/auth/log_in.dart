@@ -7,7 +7,6 @@ import 'package:music_app/pages/auth/register.dart';
 import 'package:music_app/pages/home/home.dart';
 import 'package:music_app/widgets/height.dart';
 import 'package:music_app/widgets/textstyle.dart';
-import 'package:music_app/widgets/width.dart';
 
 class LogIn extends StatefulWidget {
   const LogIn({super.key});
@@ -136,15 +135,13 @@ class _LogInState extends State<LogIn> {
                 ),
               ),
             ),
-            const HeightSpacer(height: 240),
+            const HeightSpacer(height: 120),
             Row(
               children: [
-                const WidthSpacer(width: 20),
                 Text(
                   "Don't have an account? you can",
                   style: roboto(white, 16, FontWeight.bold),
                 ),
-                const WidthSpacer(width: 10),
                 GestureDetector(
                   onTap: () {
                     Get.to(() => const Register(),

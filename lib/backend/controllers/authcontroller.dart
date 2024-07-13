@@ -22,6 +22,7 @@ class AuthController extends GetxController {
         headers: headers,
         body: jsonEncode({"email": email, "password": password}));
     dynamic data = jsonDecode(response.body);
+    print(data);
     Map<String, dynamic> token = JwtDecoder.decode(data["token"]);
     if (data["status"] == true) {
       SharedPreferences sharedPreferences =
